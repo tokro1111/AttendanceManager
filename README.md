@@ -25,8 +25,9 @@ supabaseのテーブルを更新し、登録者の入退室情報を下記のよ
 ## 3. 実行方法
 1. supabaseでtable(「2. 機能」記載)を作成
 2. `cfg/sample/user_info.py`を参考に、ユーザ情報を記入した`cfg/user_info.py`を作成
-3. .env.exampleを参考に、環境変数を設定
-4. `update_table.py`の実行
+3. `cfg/sample/data_info.py`を参考に、教室コードをkey、教室名をvalueとするdictを記入した`cfg/data_info.py`を作成
+4. .env.exampleを参考に、環境変数を設定
+5. `update_table.py`の実行
 
 
 ## 4. 追加・修正予定一覧
