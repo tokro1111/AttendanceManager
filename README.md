@@ -10,6 +10,7 @@
 - [supabase](https://supabase.com/)
 
 ## 2. 機能
+### 2.1 可視化結果
 supabaseのテーブルを更新し、登録者の入退室情報を下記のように可視化する。
 |uuid|created_at|student_id|person_name|class_room|access_status|access_update_time|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -22,6 +23,10 @@ supabaseのテーブルを更新し、登録者の入退室情報を下記のよ
 - access_status: enter(入室)とexit(退室)のどちらか
 - access_update_time: 入退室のどちらかが発生した時間帯
 
+### 2.2 大まかな処理手順
+1. marcoシステムから、その日の入退室情報を取得
+2. supabaseのtableを参照し、差分がある場合は条件ごとにtableを更新
+
 ## 3. 実行方法
 1. supabaseでtable(「2. 機能」記載)を作成
 2. `cfg/sample/user_info.py`を参考に、ユーザ情報を記入した`cfg/user_info.py`を作成
@@ -33,6 +38,6 @@ supabaseのテーブルを更新し、登録者の入退室情報を下記のよ
 ## 4. 追加・修正予定一覧
 - user_infoを別の形式で管理
 - dockerfileを構築し、コンテナ内で10分ごとに更新し続ける処理を追加
-- 複数人対応処理の追加
+- 一つのテーブルで複数人の入退室情報をリアルタイムで更新するために、複数人対応の処理を追加
 - （他の人ので試す前に）supabaseのpolicyを適切なものに設定（RLS）
 
